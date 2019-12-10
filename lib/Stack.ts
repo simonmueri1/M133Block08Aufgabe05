@@ -1,6 +1,6 @@
 import { IDataStructure } from "./IDataStructure";
 
-export class Queue<T> implements IDataStructure<T> {
+export class Stack<T> implements IDataStructure<T> {
     values: Array<T> = new Array<T>();
 
     public size(): number {
@@ -10,10 +10,10 @@ export class Queue<T> implements IDataStructure<T> {
         this.values.push(value);
     }
     public peek(): T {
-        return this.values[0];
+        return this.values[this.values.length - 1];
     }
     public poll(): T {
-        return this.values.shift();
+        return this.values.pop();
     }
     public isEmpty(): boolean {
         return this.values.length === 0;
